@@ -14,8 +14,7 @@
 		C10C37DC292A3C90007E0C86 /* coredatasample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C10C37DA292A3C90007E0C86 /* coredatasample.xcdatamodeld */; };
 		C10C37DE292A3C92007E0C86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C10C37DD292A3C92007E0C86 /* Assets.xcassets */; };
 		C10C37E1292A3C92007E0C86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C10C37DF292A3C92007E0C86 /* LaunchScreen.storyboard */; };
-		C10C37EA292BE772007E0C86 /* Crypto+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C37E8292BE772007E0C86 /* Crypto+CoreDataClass.swift */; };
-		C10C37EB292BE772007E0C86 /* Crypto+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C37E9292BE772007E0C86 /* Crypto+CoreDataProperties.swift */; };
+		C1331F5F2932819800C50705 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1331F5E2932819800C50705 /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +27,7 @@
 		C10C37DD292A3C92007E0C86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C10C37E0292A3C92007E0C86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C10C37E2292A3C92007E0C86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C10C37E8292BE772007E0C86 /* Crypto+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Crypto+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C10C37E9292BE772007E0C86 /* Crypto+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Crypto+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C1331F5E2932819800C50705 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,8 +44,6 @@
 		C10C37C5292A3C90007E0C86 = {
 			isa = PBXGroup;
 			children = (
-				C10C37E8292BE772007E0C86 /* Crypto+CoreDataClass.swift */,
-				C10C37E9292BE772007E0C86 /* Crypto+CoreDataProperties.swift */,
 				C10C37D0292A3C90007E0C86 /* coredatasample */,
 				C10C37CF292A3C90007E0C86 /* Products */,
 			);
@@ -64,6 +60,7 @@
 		C10C37D0292A3C90007E0C86 /* coredatasample */ = {
 			isa = PBXGroup;
 			children = (
+				C1331F5E2932819800C50705 /* CoreDataManager.swift */,
 				C10C37D1292A3C90007E0C86 /* AppDelegate.swift */,
 				C10C37D3292A3C90007E0C86 /* SceneDelegate.swift */,
 				C10C37D5292A3C90007E0C86 /* ViewController.swift */,
@@ -147,11 +144,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C10C37EB292BE772007E0C86 /* Crypto+CoreDataProperties.swift in Sources */,
-				C10C37EA292BE772007E0C86 /* Crypto+CoreDataClass.swift in Sources */,
 				C10C37DC292A3C90007E0C86 /* coredatasample.xcdatamodeld in Sources */,
 				C10C37D6292A3C90007E0C86 /* ViewController.swift in Sources */,
 				C10C37D2292A3C90007E0C86 /* AppDelegate.swift in Sources */,
+				C1331F5F2932819800C50705 /* CoreDataManager.swift in Sources */,
 				C10C37D4292A3C90007E0C86 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
