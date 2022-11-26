@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		C10C37D2292A3C90007E0C86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C37D1292A3C90007E0C86 /* AppDelegate.swift */; };
 		C10C37D4292A3C90007E0C86 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C37D3292A3C90007E0C86 /* SceneDelegate.swift */; };
-		C10C37D6292A3C90007E0C86 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C37D5292A3C90007E0C86 /* ViewController.swift */; };
+		C10C37D6292A3C90007E0C86 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C37D5292A3C90007E0C86 /* ListViewController.swift */; };
 		C10C37D9292A3C90007E0C86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C10C37D7292A3C90007E0C86 /* Main.storyboard */; };
 		C10C37DC292A3C90007E0C86 /* coredatasample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C10C37DA292A3C90007E0C86 /* coredatasample.xcdatamodeld */; };
 		C10C37DE292A3C92007E0C86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C10C37DD292A3C92007E0C86 /* Assets.xcassets */; };
@@ -17,13 +17,19 @@
 		C1331F5F2932819800C50705 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1331F5E2932819800C50705 /* CoreDataManager.swift */; };
 		C1331F642932855300C50705 /* CryptoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1331F632932855300C50705 /* CryptoDTO.swift */; };
 		C1331F682932859200C50705 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1331F672932859200C50705 /* Crypto.swift */; };
+		C1331F6E293288F500C50705 /* ListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1331F6D293288F500C50705 /* ListBuilder.swift */; };
+		C1331F702932896200C50705 /* ListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1331F6F2932896200C50705 /* ListProtocols.swift */; };
+		C1331F722932897D00C50705 /* ListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1331F712932897D00C50705 /* ListRouter.swift */; };
+		C1331F7429328A4800C50705 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1331F7329328A4800C50705 /* ListViewModel.swift */; };
+		C1331F7729328B1500C50705 /* CryptoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1331F7629328B1500C50705 /* CryptoUseCase.swift */; };
+		C1331F7A29328BA800C50705 /* CryptoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1331F7929328BA800C50705 /* CryptoRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C10C37CE292A3C90007E0C86 /* coredatasample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coredatasample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C10C37D1292A3C90007E0C86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C10C37D3292A3C90007E0C86 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C10C37D5292A3C90007E0C86 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C10C37D5292A3C90007E0C86 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		C10C37D8292A3C90007E0C86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C10C37DB292A3C90007E0C86 /* coredatasample.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = coredatasample.xcdatamodel; sourceTree = "<group>"; };
 		C10C37DD292A3C92007E0C86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -32,6 +38,12 @@
 		C1331F5E2932819800C50705 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		C1331F632932855300C50705 /* CryptoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoDTO.swift; sourceTree = "<group>"; };
 		C1331F672932859200C50705 /* Crypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
+		C1331F6D293288F500C50705 /* ListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBuilder.swift; sourceTree = "<group>"; };
+		C1331F6F2932896200C50705 /* ListProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListProtocols.swift; sourceTree = "<group>"; };
+		C1331F712932897D00C50705 /* ListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRouter.swift; sourceTree = "<group>"; };
+		C1331F7329328A4800C50705 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		C1331F7629328B1500C50705 /* CryptoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoUseCase.swift; sourceTree = "<group>"; };
+		C1331F7929328BA800C50705 /* CryptoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,10 +79,7 @@
 				C1331F652932857D00C50705 /* Domain */,
 				C1331F612932852E00C50705 /* Data */,
 				C1331F60293284F300C50705 /* CoreData */,
-				C10C37D1292A3C90007E0C86 /* AppDelegate.swift */,
-				C10C37D3292A3C90007E0C86 /* SceneDelegate.swift */,
-				C10C37D5292A3C90007E0C86 /* ViewController.swift */,
-				C10C37D7292A3C90007E0C86 /* Main.storyboard */,
+				C1331F69293288B200C50705 /* Presentation */,
 				C10C37DD292A3C92007E0C86 /* Assets.xcassets */,
 				C10C37DF292A3C92007E0C86 /* LaunchScreen.storyboard */,
 				C10C37E2292A3C92007E0C86 /* Info.plist */,
@@ -90,6 +99,7 @@
 		C1331F612932852E00C50705 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				C1331F7829328B9800C50705 /* Repository */,
 				C1331F622932853700C50705 /* DTO */,
 			);
 			path = Data;
@@ -106,6 +116,7 @@
 		C1331F652932857D00C50705 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				C1331F7529328B0700C50705 /* UseCase */,
 				C1331F662932858300C50705 /* Entity */,
 			);
 			path = Domain;
@@ -117,6 +128,61 @@
 				C1331F672932859200C50705 /* Crypto.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		C1331F69293288B200C50705 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C1331F6B293288C700C50705 /* Modules */,
+				C1331F6A293288BB00C50705 /* App */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		C1331F6A293288BB00C50705 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				C10C37D1292A3C90007E0C86 /* AppDelegate.swift */,
+				C10C37D3292A3C90007E0C86 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		C1331F6B293288C700C50705 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				C1331F6C293288DD00C50705 /* List */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		C1331F6C293288DD00C50705 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				C1331F6D293288F500C50705 /* ListBuilder.swift */,
+				C1331F6F2932896200C50705 /* ListProtocols.swift */,
+				C1331F712932897D00C50705 /* ListRouter.swift */,
+				C1331F7329328A4800C50705 /* ListViewModel.swift */,
+				C10C37D5292A3C90007E0C86 /* ListViewController.swift */,
+				C10C37D7292A3C90007E0C86 /* Main.storyboard */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		C1331F7529328B0700C50705 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				C1331F7629328B1500C50705 /* CryptoUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		C1331F7829328B9800C50705 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				C1331F7929328BA800C50705 /* CryptoRepository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,12 +257,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				C10C37DC292A3C90007E0C86 /* coredatasample.xcdatamodeld in Sources */,
-				C10C37D6292A3C90007E0C86 /* ViewController.swift in Sources */,
+				C10C37D6292A3C90007E0C86 /* ListViewController.swift in Sources */,
+				C1331F7A29328BA800C50705 /* CryptoRepository.swift in Sources */,
 				C10C37D2292A3C90007E0C86 /* AppDelegate.swift in Sources */,
 				C1331F5F2932819800C50705 /* CoreDataManager.swift in Sources */,
 				C1331F642932855300C50705 /* CryptoDTO.swift in Sources */,
 				C1331F682932859200C50705 /* Crypto.swift in Sources */,
+				C1331F6E293288F500C50705 /* ListBuilder.swift in Sources */,
 				C10C37D4292A3C90007E0C86 /* SceneDelegate.swift in Sources */,
+				C1331F7729328B1500C50705 /* CryptoUseCase.swift in Sources */,
+				C1331F722932897D00C50705 /* ListRouter.swift in Sources */,
+				C1331F702932896200C50705 /* ListProtocols.swift in Sources */,
+				C1331F7429328A4800C50705 /* ListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

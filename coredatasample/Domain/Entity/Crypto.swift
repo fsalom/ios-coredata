@@ -19,4 +19,10 @@ struct Crypto: Hashable {
     static func == (lhs: Crypto, rhs: Crypto) -> Bool {
         lhs.name == rhs.name
     }
+
+    init(dto: CryptoDTO) {
+        self.name = dto.name
+        self.priceUsd = dto.priceUsd
+        self.changePercent24Hr = dto.changePercent24Hr
+    }
 }

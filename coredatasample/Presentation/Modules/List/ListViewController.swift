@@ -7,10 +7,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ListViewController: UIViewController {
+    var viewModel: ListViewModelProtocol!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
