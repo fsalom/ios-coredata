@@ -23,6 +23,7 @@
 		C1331F7429328A4800C50705 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1331F7329328A4800C50705 /* ListViewModel.swift */; };
 		C1331F7729328B1500C50705 /* CryptoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1331F7629328B1500C50705 /* CryptoUseCase.swift */; };
 		C1331F7A29328BA800C50705 /* CryptoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1331F7929328BA800C50705 /* CryptoRepository.swift */; };
+		C1331F7D29328ECF00C50705 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1331F7C29328ECF00C50705 /* Container.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		C1331F7329328A4800C50705 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		C1331F7629328B1500C50705 /* CryptoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoUseCase.swift; sourceTree = "<group>"; };
 		C1331F7929328BA800C50705 /* CryptoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoRepository.swift; sourceTree = "<group>"; };
+		C1331F7C29328ECF00C50705 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 		C10C37D0292A3C90007E0C86 /* coredatasample */ = {
 			isa = PBXGroup;
 			children = (
+				C1331F7B29328EC200C50705 /* DI */,
 				C1331F652932857D00C50705 /* Domain */,
 				C1331F612932852E00C50705 /* Data */,
 				C1331F60293284F300C50705 /* CoreData */,
@@ -133,8 +136,8 @@
 		C1331F69293288B200C50705 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				C1331F6B293288C700C50705 /* Modules */,
 				C1331F6A293288BB00C50705 /* App */,
+				C1331F6B293288C700C50705 /* Modules */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -183,6 +186,14 @@
 				C1331F7929328BA800C50705 /* CryptoRepository.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		C1331F7B29328EC200C50705 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				C1331F7C29328ECF00C50705 /* Container.swift */,
+			);
+			path = DI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +278,7 @@
 				C10C37D4292A3C90007E0C86 /* SceneDelegate.swift in Sources */,
 				C1331F7729328B1500C50705 /* CryptoUseCase.swift in Sources */,
 				C1331F722932897D00C50705 /* ListRouter.swift in Sources */,
+				C1331F7D29328ECF00C50705 /* Container.swift in Sources */,
 				C1331F702932896200C50705 /* ListProtocols.swift in Sources */,
 				C1331F7429328A4800C50705 /* ListViewModel.swift in Sources */,
 			);
