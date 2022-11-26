@@ -15,6 +15,8 @@
 		C10C37DE292A3C92007E0C86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C10C37DD292A3C92007E0C86 /* Assets.xcassets */; };
 		C10C37E1292A3C92007E0C86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C10C37DF292A3C92007E0C86 /* LaunchScreen.storyboard */; };
 		C1331F5F2932819800C50705 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1331F5E2932819800C50705 /* CoreDataManager.swift */; };
+		C1331F642932855300C50705 /* CryptoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1331F632932855300C50705 /* CryptoDTO.swift */; };
+		C1331F682932859200C50705 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1331F672932859200C50705 /* Crypto.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		C10C37E0292A3C92007E0C86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C10C37E2292A3C92007E0C86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1331F5E2932819800C50705 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		C1331F632932855300C50705 /* CryptoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoDTO.swift; sourceTree = "<group>"; };
+		C1331F672932859200C50705 /* Crypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +64,9 @@
 		C10C37D0292A3C90007E0C86 /* coredatasample */ = {
 			isa = PBXGroup;
 			children = (
-				C1331F5E2932819800C50705 /* CoreDataManager.swift */,
+				C1331F652932857D00C50705 /* Domain */,
+				C1331F612932852E00C50705 /* Data */,
+				C1331F60293284F300C50705 /* CoreData */,
 				C10C37D1292A3C90007E0C86 /* AppDelegate.swift */,
 				C10C37D3292A3C90007E0C86 /* SceneDelegate.swift */,
 				C10C37D5292A3C90007E0C86 /* ViewController.swift */,
@@ -68,9 +74,49 @@
 				C10C37DD292A3C92007E0C86 /* Assets.xcassets */,
 				C10C37DF292A3C92007E0C86 /* LaunchScreen.storyboard */,
 				C10C37E2292A3C92007E0C86 /* Info.plist */,
-				C10C37DA292A3C90007E0C86 /* coredatasample.xcdatamodeld */,
 			);
 			path = coredatasample;
+			sourceTree = "<group>";
+		};
+		C1331F60293284F300C50705 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				C10C37DA292A3C90007E0C86 /* coredatasample.xcdatamodeld */,
+				C1331F5E2932819800C50705 /* CoreDataManager.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		C1331F612932852E00C50705 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C1331F622932853700C50705 /* DTO */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C1331F622932853700C50705 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				C1331F632932855300C50705 /* CryptoDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		C1331F652932857D00C50705 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				C1331F662932858300C50705 /* Entity */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		C1331F662932858300C50705 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				C1331F672932859200C50705 /* Crypto.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +194,8 @@
 				C10C37D6292A3C90007E0C86 /* ViewController.swift in Sources */,
 				C10C37D2292A3C90007E0C86 /* AppDelegate.swift in Sources */,
 				C1331F5F2932819800C50705 /* CoreDataManager.swift in Sources */,
+				C1331F642932855300C50705 /* CryptoDTO.swift in Sources */,
+				C1331F682932859200C50705 /* Crypto.swift in Sources */,
 				C10C37D4292A3C90007E0C86 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
