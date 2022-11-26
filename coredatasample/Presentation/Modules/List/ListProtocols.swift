@@ -19,4 +19,8 @@ protocol ListViewModelProtocol {
     func viewDidLoad()
     func viewDidAppear()
     func viewDidDisappear()
+
+    var cryptos: [Crypto] { get set }
+    var listCryptoUpdated: (() -> Void)? { get set }
+    var errorHasOcurred: ((Error) -> Void)? { get set }
 }

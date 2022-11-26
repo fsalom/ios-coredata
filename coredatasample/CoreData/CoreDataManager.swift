@@ -36,6 +36,7 @@ class CoreDataManager {
         guard managedContext.hasChanges else { return }
         do {
             try managedContext.save()
+            print("SAVED")
             if saveDate {
                 //Cache.set(.dateOfUpdate, Date())
             }

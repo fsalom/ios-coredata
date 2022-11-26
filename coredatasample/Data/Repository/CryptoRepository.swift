@@ -7,42 +7,37 @@
 
 import Foundation
 
-enum CryptoRepositoryError: Error{
-    case badURL
-    case badResponse
-    case decodeError
-    case badRequest
-    case invalidResponse
-}
-
 protocol CryptoRepositoryProtocol {
-    func getList() async throws -> [CryptoDTO]
+    func getList() async throws -> [Crypto]
 }
 
 final class CryptoRepository: CryptoRepositoryProtocol {
-    func getList() async throws -> [CryptoDTO] {
-        guard let url = URL(string: "https://api.coincap.io/v2/assets") else {
-            throw CryptoRepositoryError.badURL
-        }
-        let request = URLRequest(url: url)
-        print(request)
+    private var networkClient: CryptoNetworkClientProtocol
+
+    init(networkClient: CryptoNetworkClientProtocol){
+        self.networkClient = networkClient
+    }
+
+    func getList() async throws -> [Crypto] {
         do {
-            let (data, response) = try await URLSession.shared.data(for: request)
-            guard let response = response as? HTTPURLResponse else {
-                throw CryptoRepositoryError.invalidResponse
-            }
-            let decoder = JSONDecoder()
-            do {
-                if (200..<300).contains(response.statusCode) {
-                    return try decoder.decode([CryptoDTO].self, from: data)
-                } else {
-                    throw CryptoRepositoryError.badResponse
+            let cryptos = await AppDelegate.sharedAppDelegate.coreDataManager.fetchCryptos()
+            if cryptos.isEmpty {
+                let cryptoDTOs = try await networkClient.getList()
+                var cryptos = [Crypto]()
+                cryptoDTOs.forEach { cryptoDTO in
+                    cryptos.append(Crypto(dto: cryptoDTO))
                 }
-            } catch {
-                throw CryptoRepositoryError.decodeError
+                await saveCoreData(this: cryptos)
+                return cryptos
+            } else {
+                return Array(cryptos)
             }
         } catch {
-            throw CryptoRepositoryError.badRequest
+            throw error
         }
+    }
+
+    func saveCoreData(this cryptos: [Crypto]) async {
+        await AppDelegate.sharedAppDelegate.coreDataManager.save(this: cryptos)
     }
 }

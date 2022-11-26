@@ -20,6 +20,12 @@ struct Crypto: Hashable {
         lhs.name == rhs.name
     }
 
+    init(name: String, priceUsd: String, changePercent24Hr: String) {
+        self.name = name
+        self.priceUsd = priceUsd
+        self.changePercent24Hr = changePercent24Hr
+    }
+
     init(dto: CryptoDTO) {
         self.name = dto.name
         self.priceUsd = dto.priceUsd

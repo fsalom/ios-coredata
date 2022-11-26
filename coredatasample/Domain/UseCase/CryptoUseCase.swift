@@ -30,11 +30,7 @@ protocol CryptoUseCaseProtocol {
 extension CryptoUseCase: CryptoUseCaseProtocol {
     func getList() async throws -> [Crypto] {
         do {
-            let cryptoDTOs = try await repository.getList()
-            var cryptos = [Crypto]()
-            cryptoDTOs.forEach { cryptoDTO in
-                cryptos.append(Crypto(dto: cryptoDTO))
-            }
+            let cryptos = try await self.repository.getList()
             return cryptos
         } catch {
             throw error
