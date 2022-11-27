@@ -9,7 +9,7 @@ import UIKit
 
 final class Container {
     weak var window: UIWindow?
-    static let shared = Container()
+    static let shared = Container()    
 }
 
 extension Container {

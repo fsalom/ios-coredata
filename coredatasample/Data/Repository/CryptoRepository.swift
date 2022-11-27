@@ -27,7 +27,7 @@ final class CryptoRepository: CryptoRepositoryProtocol {
                 cryptoDTOs.forEach { cryptoDTO in
                     cryptos.append(Crypto(dto: cryptoDTO))
                 }
-                await saveCoreData(this: cryptos)
+                saveCoreData(this: cryptos)
                 return cryptos
             } else {
                 return Array(cryptos)
@@ -37,7 +37,9 @@ final class CryptoRepository: CryptoRepositoryProtocol {
         }
     }
 
-    func saveCoreData(this cryptos: [Crypto]) async {
-        await AppDelegate.sharedAppDelegate.coreDataManager.save(this: cryptos)
+    func saveCoreData(this cryptos: [Crypto]) {
+        DispatchQueue.main.async {
+            AppDelegate.sharedAppDelegate.coreDataManager.save(this: cryptos)
+        }
     }
 }

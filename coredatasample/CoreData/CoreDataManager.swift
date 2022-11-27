@@ -8,8 +8,14 @@ class CoreDataManager {
 
     private lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: self.modelName)
-        let description = NSPersistentStoreDescription()
 
+        let storeURL = try! FileManager
+                .default
+                .url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+                .appendingPathComponent("\(modelName).sqlite")
+        let description = NSPersistentStoreDescription(url: storeURL)
+
+        description.type = NSSQLiteStoreType
         description.shouldInferMappingModelAutomatically = true
         description.shouldMigrateStoreAutomatically = true
         container.persistentStoreDescriptions = [description]
@@ -33,7 +39,6 @@ class CoreDataManager {
     }
 
     func saveContext(saveDate: Bool = false) {
-        guard managedContext.hasChanges else { return }
         do {
             try managedContext.save()
             print("SAVED")

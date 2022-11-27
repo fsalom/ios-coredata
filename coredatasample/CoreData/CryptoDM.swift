@@ -40,9 +40,7 @@ extension CoreDataManager {
             cryptoDM.name = crypto.name
             cryptoDM.priceUsd = crypto.priceUsd
             cryptoDM.changePercent24Hr = crypto.changePercent24Hr
-            print("Crypto \(cryptoDM.name) saved")
         }
-
         saveContext()
     }
 }
