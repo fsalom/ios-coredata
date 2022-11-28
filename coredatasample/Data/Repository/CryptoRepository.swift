@@ -20,26 +20,20 @@ final class CryptoRepository: CryptoRepositoryProtocol {
 
     func getList() async throws -> [Crypto] {
         do {
-            let cryptos = await AppDelegate.sharedAppDelegate.coreDataManager.fetchCryptos()
+            let cryptos = Container.shared.coreDataManager.fetchCryptos()
             if cryptos.isEmpty {
                 let cryptoDTOs = try await networkClient.getList()
                 var cryptos = [Crypto]()
                 cryptoDTOs.forEach { cryptoDTO in
                     cryptos.append(Crypto(dto: cryptoDTO))
                 }
-                saveCoreData(this: cryptos)
+                Container.shared.coreDataManager.save(this: cryptos)
                 return cryptos
             } else {
                 return Array(cryptos)
             }
         } catch {
             throw error
-        }
-    }
-
-    func saveCoreData(this cryptos: [Crypto]) {
-        DispatchQueue.main.async {
-            AppDelegate.sharedAppDelegate.coreDataManager.save(this: cryptos)
         }
     }
 }

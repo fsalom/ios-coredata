@@ -33,6 +33,7 @@ class ListViewController: UIViewController {
         tableView.delegate = self
         self.tableView.register(UINib(nibName: "CryptoCell", bundle: nil),
                                 forCellReuseIdentifier: "CryptoCell")
+        self.tableView.rowHeight = 60
     }
 }
 
@@ -45,5 +46,9 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CryptoCell", for: indexPath) as! CryptoCell
         cell.crypto = viewModel.cryptos[indexPath.row]
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        60
     }
 }

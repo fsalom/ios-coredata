@@ -113,6 +113,7 @@
 		C1331F612932852E00C50705 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				C1331F8A2933BD3400C50705 /* CoreData */,
 				C1331F852932C12400C50705 /* Network */,
 				C1331F7829328B9800C50705 /* Repository */,
 				C1331F622932853700C50705 /* DTO */,
@@ -225,6 +226,13 @@
 				C1331F862932C14900C50705 /* CryptoNetworkClient.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		C1331F8A2933BD3400C50705 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

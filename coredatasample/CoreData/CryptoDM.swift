@@ -16,7 +16,6 @@ extension CoreDataManager {
         do {
             let cryptosDM = try managedContext.fetch(fetchRequest)
             var cryptos: Set<Crypto> = []
-
             for cryptoDM in cryptosDM {
                 let (inserted, memberAfterInsert) = cryptos.insert(Crypto(name: cryptoDM.name ?? "",
                                                                           priceUsd: cryptoDM.priceUsd ?? "",
@@ -25,7 +24,6 @@ extension CoreDataManager {
                     print("Crypto \(memberAfterInsert) already exists")
                 }
             }
-
             return cryptos
         } catch {
             print("Error fething the literals - \(error)")
