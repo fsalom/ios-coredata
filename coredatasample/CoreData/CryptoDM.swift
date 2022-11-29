@@ -26,7 +26,7 @@ extension CoreDataManager {
             }
             return cryptos
         } catch {
-            print("Error fething the literals - \(error)")
+            print("Error fething cryptos - \(error)")
         }
         return []
     }
@@ -39,6 +39,19 @@ extension CoreDataManager {
             cryptoDM.priceUsd = crypto.priceUsd
             cryptoDM.changePercent24Hr = crypto.changePercent24Hr
         }
+        update(this: "Crypto")
         saveContext()
+    }
+
+    func deleteCryptos() {
+        let fetchRequest: NSFetchRequest<CryptoDM> = CryptoDM.fetchRequest()
+        let deleteBatch = NSBatchDeleteRequest(fetchRequest: fetchRequest as! NSFetchRequest<NSFetchRequestResult>)
+
+        do {
+            try managedContext.execute(deleteBatch)
+            print("Success deleting cryptos")
+        } catch {
+            print("Error deleting cryptos \(error)")
+        }
     }
 }

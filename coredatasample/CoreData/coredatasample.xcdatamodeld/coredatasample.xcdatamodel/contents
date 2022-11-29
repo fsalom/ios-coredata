@@ -5,4 +5,8 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="priceUsd" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="UpdateInformationDM" representedClassName="UpdateInformationDM" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
 </model>

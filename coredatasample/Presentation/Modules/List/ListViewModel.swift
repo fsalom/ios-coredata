@@ -26,7 +26,8 @@ final class ListViewModel: ListViewModelProtocol {
     var listCryptoUpdated: (() -> Void)?
     var errorHasOcurred: ((Error) -> Void)?
 
-    init(router: ListRouterProtocol, cryptoUseCase: CryptoUseCaseProtocol) {
+    init(router: ListRouterProtocol,
+         cryptoUseCase: CryptoUseCaseProtocol) {
         self.router = router
         self.cryptoUseCase = cryptoUseCase
     }

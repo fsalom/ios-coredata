@@ -29,6 +29,9 @@
 		C1331F842932B2BB00C50705 /* DataResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1331F832932B2BB00C50705 /* DataResponseDTO.swift */; };
 		C1331F872932C14900C50705 /* CryptoNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1331F862932C14900C50705 /* CryptoNetworkClient.swift */; };
 		C1331F892932C5D300C50705 /* CryptoDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1331F882932C5D300C50705 /* CryptoDM.swift */; };
+		C1331F8C293538A600C50705 /* UpdateInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1331F8B293538A600C50705 /* UpdateInformation.swift */; };
+		C1331F9029353AAC00C50705 /* UpdateInformationDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1331F8F29353AAC00C50705 /* UpdateInformationDM.swift */; };
+		C1331F95293559B000C50705 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1331F94293559B000C50705 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +59,9 @@
 		C1331F832932B2BB00C50705 /* DataResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataResponseDTO.swift; sourceTree = "<group>"; };
 		C1331F862932C14900C50705 /* CryptoNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoNetworkClient.swift; sourceTree = "<group>"; };
 		C1331F882932C5D300C50705 /* CryptoDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoDM.swift; sourceTree = "<group>"; };
+		C1331F8B293538A600C50705 /* UpdateInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateInformation.swift; sourceTree = "<group>"; };
+		C1331F8F29353AAC00C50705 /* UpdateInformationDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateInformationDM.swift; sourceTree = "<group>"; };
+		C1331F94293559B000C50705 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,7 @@
 		C10C37D0292A3C90007E0C86 /* coredatasample */ = {
 			isa = PBXGroup;
 			children = (
+				C1331F932935599700C50705 /* Configuration */,
 				C1331F60293284F300C50705 /* CoreData */,
 				C1331F7B29328EC200C50705 /* DI */,
 				C1331F612932852E00C50705 /* Data */,
@@ -106,6 +113,7 @@
 				C10C37DA292A3C90007E0C86 /* coredatasample.xcdatamodeld */,
 				C1331F5E2932819800C50705 /* CoreDataManager.swift */,
 				C1331F882932C5D300C50705 /* CryptoDM.swift */,
+				C1331F8F29353AAC00C50705 /* UpdateInformationDM.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -113,7 +121,6 @@
 		C1331F612932852E00C50705 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				C1331F8A2933BD3400C50705 /* CoreData */,
 				C1331F852932C12400C50705 /* Network */,
 				C1331F7829328B9800C50705 /* Repository */,
 				C1331F622932853700C50705 /* DTO */,
@@ -143,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				C1331F672932859200C50705 /* Crypto.swift */,
+				C1331F8B293538A600C50705 /* UpdateInformation.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -228,11 +236,12 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		C1331F8A2933BD3400C50705 /* CoreData */ = {
+		C1331F932935599700C50705 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				C1331F94293559B000C50705 /* Constants.swift */,
 			);
-			path = CoreData;
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,13 +319,16 @@
 				C1331F842932B2BB00C50705 /* DataResponseDTO.swift in Sources */,
 				C10C37DC292A3C90007E0C86 /* coredatasample.xcdatamodeld in Sources */,
 				C10C37D6292A3C90007E0C86 /* ListViewController.swift in Sources */,
+				C1331F9029353AAC00C50705 /* UpdateInformationDM.swift in Sources */,
 				C1331F872932C14900C50705 /* CryptoNetworkClient.swift in Sources */,
 				C1331F812932B0BC00C50705 /* CryptoCell.swift in Sources */,
+				C1331F95293559B000C50705 /* Constants.swift in Sources */,
 				C1331F7A29328BA800C50705 /* CryptoRepository.swift in Sources */,
 				C10C37D2292A3C90007E0C86 /* AppDelegate.swift in Sources */,
 				C1331F5F2932819800C50705 /* CoreDataManager.swift in Sources */,
 				C1331F642932855300C50705 /* CryptoDTO.swift in Sources */,
 				C1331F682932859200C50705 /* Crypto.swift in Sources */,
+				C1331F8C293538A600C50705 /* UpdateInformation.swift in Sources */,
 				C1331F6E293288F500C50705 /* ListBuilder.swift in Sources */,
 				C10C37D4292A3C90007E0C86 /* SceneDelegate.swift in Sources */,
 				C1331F7729328B1500C50705 /* CryptoUseCase.swift in Sources */,

@@ -16,7 +16,8 @@ final class ListBuilder: ListBuilderProtocol {
         let cryptoNetworkClient = CryptoNetworkClient()
         let cryptoRepository = CryptoRepository(networkClient: cryptoNetworkClient)
         let useCase = CryptoUseCase(repository: cryptoRepository)
-        let viewModel = ListViewModel(router: router, cryptoUseCase: useCase)
+        let viewModel = ListViewModel(router: router,
+                                      cryptoUseCase: useCase)
         viewController.viewModel = viewModel
         return viewController
     }

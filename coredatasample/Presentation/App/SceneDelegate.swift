@@ -19,6 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         Container.shared.window = window
+        let entities = [UpdateInformation(name: "Crypto", date: "\(Date())")]
+        Container.shared.coreDataManager.save(this: entities)
         Container.shared.home()
     }
 
