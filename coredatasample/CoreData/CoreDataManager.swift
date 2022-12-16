@@ -33,11 +33,6 @@ class CoreDataManager {
         self.modelName = modelName
     }
 
-    // MARK: Functions
-    func deleteDB() {
-
-    }
-
     func saveContext(saveDate: Bool = false) {
         do {
             try managedContext.save()
