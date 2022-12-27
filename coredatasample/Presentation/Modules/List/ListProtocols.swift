@@ -19,6 +19,7 @@ protocol ListViewModelProtocol {
     func viewDidLoad()
     func viewDidAppear()
     func viewDidDisappear()
+    func refreshCryptos()
 
     var cryptos: [Crypto] { get set }
     var listCryptoUpdated: (() -> Void)? { get set }

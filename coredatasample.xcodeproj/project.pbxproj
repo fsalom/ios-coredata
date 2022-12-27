@@ -32,6 +32,7 @@
 		C1331F8C293538A600C50705 /* UpdateInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1331F8B293538A600C50705 /* UpdateInformation.swift */; };
 		C1331F9029353AAC00C50705 /* UpdateInformationDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1331F8F29353AAC00C50705 /* UpdateInformationDM.swift */; };
 		C1331F95293559B000C50705 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1331F94293559B000C50705 /* Constants.swift */; };
+		C188A760295AFE3800A94809 /* CryptoCoreDataClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C188A75F295AFE3800A94809 /* CryptoCoreDataClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		C1331F8B293538A600C50705 /* UpdateInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateInformation.swift; sourceTree = "<group>"; };
 		C1331F8F29353AAC00C50705 /* UpdateInformationDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateInformationDM.swift; sourceTree = "<group>"; };
 		C1331F94293559B000C50705 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C188A75F295AFE3800A94809 /* CryptoCoreDataClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCoreDataClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 		C1331F612932852E00C50705 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				C188A75E295AFE2500A94809 /* CoreData */,
 				C1331F852932C12400C50705 /* Network */,
 				C1331F7829328B9800C50705 /* Repository */,
 				C1331F622932853700C50705 /* DTO */,
@@ -244,6 +247,14 @@
 			path = Configuration;
 			sourceTree = "<group>";
 		};
+		C188A75E295AFE2500A94809 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				C188A75F295AFE3800A94809 /* CryptoCoreDataClient.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -333,6 +344,7 @@
 				C10C37D4292A3C90007E0C86 /* SceneDelegate.swift in Sources */,
 				C1331F7729328B1500C50705 /* CryptoUseCase.swift in Sources */,
 				C1331F892932C5D300C50705 /* CryptoDM.swift in Sources */,
+				C188A760295AFE3800A94809 /* CryptoCoreDataClient.swift in Sources */,
 				C1331F722932897D00C50705 /* ListRouter.swift in Sources */,
 				C1331F7D29328ECF00C50705 /* Container.swift in Sources */,
 				C1331F702932896200C50705 /* ListProtocols.swift in Sources */,

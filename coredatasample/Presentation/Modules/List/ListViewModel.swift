@@ -40,18 +40,20 @@ extension ListViewModel {
     }
 
     func viewDidAppear() {
-
     }
 
     func viewDidDisappear() {
+    }
 
+    func refreshCryptos() {
+        loadCryptos(forceUpdate: true)
     }
 
     //MARK: Actions
-    func loadCryptos() {
+    func loadCryptos(forceUpdate: Bool = false) {
         Task {
             do {
-                self.cryptos = try await cryptoUseCase.getList()
+                self.cryptos = try await cryptoUseCase.getList(forceUpdate: forceUpdate)
             } catch {
                 errorHasOcurred?(error)
             }

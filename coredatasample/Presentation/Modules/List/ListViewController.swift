@@ -9,13 +9,16 @@ import UIKit
 
 class ListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+
+    let refreshControl = UIRefreshControl()
     var viewModel: ListViewModelProtocol!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.viewDidLoad()
         configure()
         setupBindings()
-        viewModel.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
         // Do any additional setup after loading the view.
     }
 
@@ -24,16 +27,26 @@ class ListViewController: UIViewController {
             guard let self else { return }
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                self.refreshControl.endRefreshing()
             }
         }
     }
 
     func configure() {
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        tableView.addSubview(refreshControl)
         tableView.dataSource = self
         tableView.delegate = self
         self.tableView.register(UINib(nibName: "CryptoCell", bundle: nil),
                                 forCellReuseIdentifier: "CryptoCell")
         self.tableView.rowHeight = 60
+    }
+
+    @objc func refresh(_ sender: AnyObject) {
+        viewModel.refreshCryptos()
+    }
+    @objc func willEnterForeground() {
+        viewModel.viewDidLoad()
     }
 }
 

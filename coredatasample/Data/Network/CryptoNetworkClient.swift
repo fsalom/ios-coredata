@@ -39,6 +39,7 @@ extension CryptoNetworkClient: CryptoNetworkClientProtocol {
             do {
                 if (200..<300).contains(response.statusCode) {
                     let json = try decoder.decode(DataNetworkResponse<[CryptoDTO]>.self, from: data)
+                    print("☎️ Llamada para obtener \(json.data?.count ?? 0) cryptos")                    
                     return json.data ?? []
                 } else {
                     throw CryptoNetworkError.badResponse

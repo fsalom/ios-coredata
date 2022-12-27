@@ -10,21 +10,23 @@ import CoreData
 
 extension CoreDataManager {
 
-    func shouldUpdate(this name: String) -> Bool {
-        let fetchRequest: NSFetchRequest<UpdateInformationDM> = UpdateInformationDM.fetchRequest()
-        let informationPredicate = NSPredicate(format: "name == %@", name as String)
-        fetchRequest.predicate = informationPredicate
+    func shouldUpdate(this name: String, result: @escaping (Bool) -> Void) {
+        DispatchQueue.main.async {
+            let fetchRequest: NSFetchRequest<UpdateInformationDM> = UpdateInformationDM.fetchRequest()
+            let informationPredicate = NSPredicate(format: "name == %@", name as String)
+            fetchRequest.predicate = informationPredicate
 
-        do {
-            let results = try self.managedContext.fetch(fetchRequest)
-            if let result = results.first {
-                return isExpired(this: result.date ?? "\(Date())")
-            }else{
-                return true
+            do {
+                let results = try self.managedContext.fetch(fetchRequest)
+                if let information = results.first {
+                    result(self.isExpired(this: information.date ?? "\(Date())"))
+                }else{
+                    result(true)
+                }
+            } catch {
+                print("Error createOrUpdate the products - \(error)")
+                result(true)
             }
-        } catch {
-            print("Error createOrUpdate the products - \(error)")
-            return true
         }
     }
 
@@ -32,30 +34,33 @@ extension CoreDataManager {
         let expiryDate = date
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss ZZZ"
-        return Date() < dateFormatter.date(from: expiryDate) ?? Date() ? false : true
+        return Date() < dateFormatter.date(from: expiryDate)?.addingTimeInterval(60) ?? Date() ? false : true
     }
 
     func save(this updateInformations: [UpdateInformation]) {
-        for updateInformation in updateInformations {
-            let fetchRequest: NSFetchRequest<UpdateInformationDM> = UpdateInformationDM.fetchRequest()
-            let informationPredicate = NSPredicate(format: "name == %@", updateInformation.name as String)
-            fetchRequest.predicate = informationPredicate
+        DispatchQueue.main.async {
+            for updateInformation in updateInformations {
+                let fetchRequest: NSFetchRequest<UpdateInformationDM> = UpdateInformationDM.fetchRequest()
+                let informationPredicate = NSPredicate(format: "name == %@", updateInformation.name as String)
+                fetchRequest.predicate = informationPredicate
 
-            do {
-                let results = try self.managedContext.fetch(fetchRequest)
-                if results.count == 0 {
-                    let updateInformationDM = UpdateInformationDM(context: managedContext)
-                    updateInformationDM.name = updateInformation.name
-                    updateInformationDM.date = updateInformation.date
+                do {
+                    let results = try self.managedContext.fetch(fetchRequest)
+                    if results.count == 0 {
+                        let updateInformationDM = UpdateInformationDM(context: self.managedContext)
+                        updateInformationDM.name = updateInformation.name
+                        updateInformationDM.date = updateInformation.date
+                    }
+                } catch {
+                    print("Error save the information - \(error)")
                 }
-            } catch {
-                print("Error save the information - \(error)")
             }
+            self.saveContext()
         }
-        saveContext()
     }
 
     func update(this name: String) {
+        print("🕓 Update \(name) last time updated")
         let fetchRequest: NSFetchRequest<UpdateInformationDM> = UpdateInformationDM.fetchRequest()
         let informationPredicate = NSPredicate(format: "name == %@", name as String)
         fetchRequest.predicate = informationPredicate
@@ -67,7 +72,6 @@ extension CoreDataManager {
         } catch {
             print("Error createOrUpdate the products - \(error)")
         }
-        saveContext()
     }
 
     func deleteInformation() {
@@ -76,7 +80,7 @@ extension CoreDataManager {
 
         do {
             try managedContext.execute(deleteBatch)
-            print("Success deleting information")
+            print("🗑 Success deleting information")
         } catch {
             print("Error deleting information \(error)")
         }

@@ -14,7 +14,8 @@ final class ListBuilder: ListBuilderProtocol {
         let viewController = storyboard.instantiateViewController(identifier: "ListViewController") as ListViewController
         let router = ListRouter(viewController: viewController)
         let cryptoNetworkClient = CryptoNetworkClient()
-        let cryptoRepository = CryptoRepository(networkClient: cryptoNetworkClient)
+        let cryptoCoreDataClient = CryptoCoreDataClientClient()
+        let cryptoRepository = CryptoRepository(networkClient: cryptoNetworkClient, coreDataClient: cryptoCoreDataClient)
         let useCase = CryptoUseCase(repository: cryptoRepository)
         let viewModel = ListViewModel(router: router,
                                       cryptoUseCase: useCase)

@@ -24,13 +24,13 @@ final class CryptoUseCase {
 }
 
 protocol CryptoUseCaseProtocol {
-    func getList() async throws -> [Crypto]
+    func getList(forceUpdate: Bool) async throws -> [Crypto]
 }
 
 extension CryptoUseCase: CryptoUseCaseProtocol {
-    func getList() async throws -> [Crypto] {
+    func getList(forceUpdate: Bool = false) async throws -> [Crypto] {
         do {
-            let cryptos = try await self.repository.getList()
+            let cryptos = try await self.repository.getList(forceUpdate: forceUpdate)
             return cryptos
         } catch {
             throw error
